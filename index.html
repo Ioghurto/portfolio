@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+      <title>Valentin LANGNER</title>
+      <meta charset="utf-8"/>
+      <meta name="author" content="L- Valentin"/>
+      <link rel="stylesheet" href="style/style.css"/>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+      <script src="https://www.youtube.com/iframe_api"></script>
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script src="script/script.js" defer></script>
+      <script src="script/parallaxe.js"></script>
+      <script src="json/cinema_fr.geojson"></script>
+    </head>
+    <body>
+      <div id="presentation"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DIV 1-->
+        <section id="header"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LE HEADER-->
+        <h1>PORTFOLIO DE VALENTIN</h1>
+        </section>
+
+        
+        <section id="paragraphe"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PARAGRAPHE ET IMAGE--> 
+          <img src="medias/image/illu/photoPres.jpg" alt="Une photo de moi"/><!--Faut pas se focaliser sur le texte parce que c'est globalement une blague.-->
+          <article>
+            <p>Bonjour ! Je m'appelle Valentin Langner. J'ai 20 ans. Je suis étudiant au DUT Métiers du Multimédias et de l'Internet.</p>
+            <p>Cette formation offre une polyvalence et une diversité d'enseignements conséquente, puisque nous y apprenons, en plus de la programmation, la communication et le design.
+              C'est donc grâce à ce que j'y ai appris que je suis en capacité de développer ce portfolio.</p>
+            <p>Dedans, vous y trouverez également mes compétences, les créations dont je suis le plus fier, ainsi que les projets que j'ai pour l'avenir.</p>
+          </article>
+        </section>
+        <section id="contextualNav1">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#competences"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+      </div>
+
+      <div id="competences"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DIV 2-->
+        <section id="contextualNav2">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#header"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+        <section>
+          <h2>Compétences</h2>
+          <img id='cvimg' src='medias/image/illu/CV jauges.png'>
+        </section>
+        <section id="contextualNav3">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#galerie"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+      </div>
+
+      <div><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DIV 3-->
+        <section id="contextualNav4">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#competences"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+
+        <section id="galerie"><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CAROUSSEL-->
+          <h2>Créations</h2>
+          <article><!--scène-->
+            <img src="medias/image/illu/Alice.png" alt="bts1"/><!--Les images qui défileront toutes-->
+            <img src="medias/image/illu/divinite.png" alt="bts2"/>
+            <img src="medias/image/illu/fenn.png" alt="wp1"/>
+            <img src="medias/image/illu/Cira.png" alt="wp2"/>
+            <img src="medias/image/illu/Wireframe.png" alt="wp3"/>
+            <img src="medias/image/illu/affiche.png" alt="wp4"/>
+            <img src="medias/image/illu/yves.gif" alt="wp5"/>
+          </article>
+          <article>
+            <h3>Digital Painting - Alice au pays des merveilles</h3> <!--Les légendes qui les accompagnent-->
+            <h3>Vectoriel sans contour - Divinités élémentaires</h3>
+            <h3>Digital Painting - L'Étreinte Glaciale</h3>
+            <h3>Vectoriel - Photo de profil</h3>
+            <h3>Wireframe produit en cours</h3>
+            <h3>Affiche produite en cours</h3>
+            <h3>Animation produite en cours</h3>
+          </article>
+                <!--Contrôles-->
+          <article>
+            <span></span> <!--Tout ça prendra la forme de points. Quand on clique dessus, l'image et la légende correspondante apparaîtront.-->
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </article>
+        </section>
+        <section id="contextualNav5">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#cinema"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+      </div>
+      <div><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DIV 4-->
+        <section id="contextualNav6">
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
+            <a href="#galerie"><circle cx="50" cy="50" r="30" fill="white"/></a>
+          </svg>
+        </section>
+        <section id="cinema">
+          <h2>Projets</h2>
+          <article id="projet">
+            <p>J'ai un projet d'écriture secondaire.</p>
+            <p>Il s'agit d'une saga littéraire de fantasy. Fenn, le personnage principal, se voit confronté au Narrateur du livre après une erreur qu'il commet dans le script. Deux objectifs vont alors se confronter. L'un veut vivre libre, l'autre veut absolument réparer le script en poursuivant son histoire.</p>
+            <p>C'est au travers de cette intrigue principale que nous découvrirons Terrariis, une île à l'Histoire et à la politique complexe, ainsi que divers personnages très variés lâché dans un vaste monde.</p>
+            <p>De cette histoire, j'ai le premier tome en cours de réécriture et de correction. La trame principale est également quasiment complétée. Je ne sais pas si je tenterai de faire publier ou d'autopublier.</p>
+            <p>Quelques illustrations sont disponibles dans la <a href="#galerie">galerie</a> au dessus, ainsi que <a href="https://twitter.com/ioghurto" target="_blank">sur mon compte twitter</a></p>
+          </article>
+        </section>
+      </div>
+      <div id="fixed">
+        <section id="nav"> <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LE MENU-->
+          <svg version="1.2" viewBox="0 0 100 100 " preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"> <!--J'avoue que c'est un copié-collé que je comprends pas trop-->
+            <a href="#header"><circle cx="35" cy="35" r="10" fill="white" fill-opacity="0"/></a> <!--Par contre j'ai fait ça presque tout seul. les 4 première balises, c'est les petits ronds de sélection-->
+            <a href="#competences"><circle cx="35" cy="35" r="10" fill="white" fill-opacity="0"/></a>
+            <a href="#galerie"><circle cx="35" cy="35" r="10" fill="white" fill-opacity="0"/></a>
+            <a href="#cinema"><circle cx="35" cy="35" r="10" fill="white" fill-opacity="0"/></a>
+            <circle cx="50" cy="50" r="30" fill="white" stroke="white" stroke-width=5% /> <!--Et ça c'est le gros rond qui les cache, pour l'instant-->
+          </svg>
+          <p>Présentation</p> <!--Et ça c'est les légendes qui sont cachées pour l'instant.-->
+          <p>Compétences</p><!--Mais elle seront visibles avec le hover, c'est dans le CSS, ça-->
+          <p>Créations</p>
+          <p>Projets</p>
+        </section>
+        <a href="https://www.linkedin.com/in/valentin-langner-253a8b213/" target="_blank"><img src="medias/image/icone/logoLinkedin.png"></a><!--Insta-->
+        <a href="https://twitter.com/ioghurto" target="_blank"><img src="medias/image/icone/logoTwi.png"></a><!--twitter-->
+      </div>
+    </body>
+</html>

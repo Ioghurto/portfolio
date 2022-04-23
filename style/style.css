@@ -1,0 +1,368 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~REGLES GLOBALES*/
+
+@font-face{ /*définition d'une police*/
+    font-family: "Caviar Dreams";
+    src: url("../medias/fonts/CaviarDreams.ttf") format("truetype");
+}
+@font-face{ /*définition d'une police*/
+    font-family: "Caviar Dreams Bold";
+    src: url("../medias/fonts/CaviarDreams_Bold.ttf") format("truetype");
+}
+
+html{
+    scroll-snap-type: y proximity; /*gestion des attaches du scroll*/
+}
+body{
+    font-family: 'Caviar Dreams'; /*définition de la police sur la page*/
+    background-image: url("../medias/image/illu/wp6.jpg");/*L'image du desert en fond*/
+    background-repeat: no-repeat; /*faut pas qu'elle se répète*/
+    background-size: auto 100%; /* faut pas non plus qu'il n'y ait plus de background en bas*/
+    margin:0; /* ça c'est pour les bords blancs*/
+}
+
+section{
+    margin: 0 auto;/*j'ai envie que les sections soient délimitées par un espace.*/
+}
+body>div:not(:nth-of-type(5)){
+    height: 100vh; /*Chaque div occupe la taille verticale de l'écran*/
+    font-size: 1vw; /*La police d'écriture n'est pas trop petite*/
+    background-repeat: no-repeat; /*Leurs backgrounds ne se répètent pas*/
+    background-size: cover; /*Ils couvrent toute la zone qu'on lui dit de couvrir sans changer de résolution*/
+    background-attachment: fixed; /*L'image de ce background ne bouge pas*/
+    scroll-snap-align: start; /*Le point d'attache du scrolling est lié au début des divs.*/
+}
+h2{
+    color: white;
+    font-family: 'Caviar Dreams Bold';
+    margin-top:0;
+    font-size: 3.5em;
+    text-align: center;
+}
+h1{
+    color: #15af97;
+    font-family: 'Caviar Dreams Bold';
+    font-size: calc(1em + 3.5vw);
+    text-align: right;
+    margin: 5% 5% 2% 2%;
+    mix-blend-mode:multiply;
+    
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PREMIERE DIV*/
+
+body>div:first-of-type{
+    background-image: url("../medias/image/illu/wp6.jpg"); /*Le fond de la div*/
+}
+#header{/*Gestion du logo titre*/
+    display: flex; 
+    justify-content: right; /*j'ai envie de le mettre à droite*/
+    width:55%;
+    margin-right:0;
+}
+body>div:first-of-type>section:first-of-type>img{/*Gestion du logo titre*/
+    height: 20vh; /*et j'ai moyennement envie qu'il prenne tout l'écran*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~FIXÉ*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MENU*/
+
+#nav{
+    height: 15vmin; /*Je veux qu'il fasse 15% de la hauteur de l'écran*/
+    position: fixed; /*Je veux pas qu'il reste en haut parce que sinon ça sert à rien*/
+    top: 5% ; left: 4%;/*Je veux qu'il soit pas calé au bord de l'écran*/
+}
+#nav>svg{
+    height:100%;/*Je veux que le svg prenne l'intégralité de sa case*/
+}
+svg * {
+    transition: 0.5s; /*C'est mieux si ça s'anime*/
+    z-index: 1000;
+  }
+.cercleMain{/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~LE MENU QUAND HOVER (les classes seront exploitées dans le JS)*/
+    fill-opacity: 0; /*L'intérieur du cercle principal disparait*/
+    stroke-width: 2.5%; /*Ses bords s'affinent */
+    transform: translateX(-15%) translateY(-15%); /*Il se déplace pour laisser la place aux petits ronds*/
+}
+.cercle1{/*L'accueil (pour tous les prochains cercles, ce sera pareil)*/
+    transform-origin: center;/*ça c'est pour évite que ça rotate à partir de n'importe quel point d'ancrage*/
+    fill-opacity: 100;/*Les petits cercles apparaissent*/
+    transform: rotateZ(0deg) translateX(45%);/*Là ça translate, j'y ai fait au doigt mouillé*/
+}
+.cercle2{
+    transform-origin: center;
+    fill-opacity: 100;
+    transform: rotateZ(60deg) translateX(35%);
+}
+.cercle3{
+    transform-origin: center;
+    fill-opacity: 100;
+    transform: rotateZ(115deg) translateX(37.5%);
+}
+.cercle4{
+    transform-origin: center;
+    fill-opacity: 100;
+    transform: rotateZ(150deg) translateX(47.5%);
+}
+a>circle:hover{
+    fill: #c9ede8; /*quand j'hover ça mets en orange*/
+    transition: 0.5s;/*rapidement mais pas trop*/
+}
+#nav>p{
+    color:white;/*Les légendes sont blanches*/
+    opacity: 0;/*Mais vu qu'elles sont pas en hover, ils ont une opacité nulle.*/
+}
+.legend{
+    opacity: 1 !important; /*le hover sera géré par le js.*/
+}
+#nav>p:first-of-type{
+    transform: translateX(95%) translateY(-600%) /*ça aussi c'est du placement au doigt mouillé*/
+}
+#nav>p:nth-of-type(2){
+    transform: translateX(87.5%) translateY(-620%)
+}
+#nav>p:nth-of-type(3){
+    transform: translateX(70%) translateY(-670%)
+}
+#nav>p:nth-of-type(4){
+    transform: translateX(30%) translateY(-720%)
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CONTEXTNAV*/
+#contextualNav1{
+    position: absolute;
+    height: 10vmin;
+    width: 10vmin;
+    bottom: 2vh;
+    left:46.5vw;
+}
+#contextualNav1>svg{
+    height: 100%;
+}
+
+#contextualNav2{
+    position: relative;
+    margin:0;
+    height: 10vmin;
+    width: 10vmin;
+    top: 2vh;
+    left:46.5vw;
+}
+#contextualNav2>svg{
+    height: 100%;
+}
+
+#contextualNav3{
+    position: absolute;
+    margin:0;
+    height: 10vmin;
+    width: 10vmin;
+    top:188%;
+    left:46.5vw;
+}
+#contextualNav3>svg{
+    height: 100%;
+    
+}
+#contextualNav4{
+    position: relative;
+    margin:0;
+    height: 10vmin;
+    width: 10vmin;
+    top: 2vh;
+    left:46.5vw;
+}
+#contextualNav4>svg{
+    height: 100%;
+}
+#contextualNav5{
+    position: absolute;
+    margin:0;
+    height: 10vmin;
+    width: 10vmin;
+    top:288%;
+    left:46.5vw;
+}
+#contextualNav5>svg{
+    height: 100%;
+}
+#contextualNav6{
+    position: relative;
+    margin:0;
+    height: 10vmin;
+    width: 10vmin;
+    top: 2vh;
+    left:46.5vw;
+}
+#contextualNav6>svg{
+    height: 100%;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ICONES*/
+#fixed>a>img{  /*Toutes les icones fixes*/
+    width:7.5vmin; /*Font la même taille*/
+    position: fixed;/*sont fixées, du coup*/
+    transition:0.5s;
+}
+#fixed>a>img:hover{
+    width:8vmin;
+    filter: brightness(0.75) sepia(0.5) saturate(200%) hue-rotate(100deg);
+}
+#fixed>a:nth-of-type(1)>img{
+    bottom : 2vmin;/* Le reste est aligné par rapport à en bas avec le même espacement.*/
+    left : 2.5vmin;
+}
+#fixed>a:nth-of-type(2)>img{
+    bottom : 2vmin;
+    left : 12.5vmin;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PARAGRAPHE*/
+#paragraphe{
+    display:flex;
+    margin-top:10vh;
+}
+
+#paragraphe>div{
+    padding: 0 30vmin; /*Le titre n'est pas sur le bord*/
+}
+#paragraphe>article{
+    position:absolute;
+    background-color:rgba(255, 255, 255, 0.95);/*L'article a un fond translucide*/
+    width: 50vw;
+    padding: 5vw 5vw; /*Il a un padding un peu large, avec une unité fixe dessus pour éviter que l'image passe dessus*/
+    columns: 2;/*Le texte est reparti en 3 colonnes*/
+    column-rule: 1px solid rgb(75, 70, 74);/*les lignes de séparation des colonnes*/
+    left:5%;
+}
+#paragraphe>article>p{
+    text-align: justify;
+}
+#paragraphe>article>p:first-of-type{
+    margin-top:0;
+}
+#paragraphe>img{
+    position:relative;
+    left:65vw;
+    width:20vw;/*L'image a une largeur d'un quart de celle de l'écran*/
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DEUXIEME DIV*/
+body>div:nth-of-type(2){
+    background-image: url("../medias/image/illu/wp5.jpg"); /*L'image de la div*/
+}
+#competences>section>h2{
+    position: absolute;
+    top:102%;
+    right:2%;
+    width: 30%;
+    font-family: 'Caviar Dreams Bold';
+    font-size: 3.5em;
+    text-align: right;
+}
+#cvimg{
+    max-height: 60vh;
+    max-width: 60vw;
+    position: relative;
+    left:30vw;
+    top:10vh;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TROISIEME DIV */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~GALERIE*/
+body>div:nth-of-type(3){
+    background-image: url("../medias/image/illu/wp3.jpg");/*L'image de la div*/
+}
+#galerie>h2{
+    position:absolute;
+    top:202%;
+    right:2%;
+}
+#galerie>article:first-of-type{
+    display:flex;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    padding: 5vh;
+    position: relative;
+}
+
+#galerie>article>img{
+    position: absolute;
+    transition: transform 1s;
+    height:90%;
+    object-fit: cover;
+}
+#galerie>article>h3{
+    position: absolute;
+    color:white;
+}
+#galerie>article:nth-of-type(2),#galerie>article:nth-of-type(3){
+    width: 25%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+#galerie>article:nth-of-type(3){
+    margin-top: 10vh;
+}
+
+#galerie>article:first-of-type{
+    justify-content: center;
+}
+
+#galerie>article>img:not(:first-of-type){
+    display: none;
+}
+#galerie>article>h3:not(:first-of-type){
+    display: none;
+}
+span {
+    display: inline-block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~QUATRIEME DIV*/
+body>div:nth-of-type(4){
+    background-image: url("../medias/image/illu/wp1.jpg");
+}
+#cinema>h2{
+    position:absolute;
+    top:302%;
+    right:2%;
+}
+#projet{
+    position:absolute;
+    background-color:rgba(255, 255, 255, 0.95);/*L'article a un fond translucide*/
+    width: 50vw;
+    padding: 5vw 5vw; /*Il a un padding un peu large, avec une unité fixe dessus pour éviter que l'image passe dessus*/
+    columns: 2;/*Le texte est reparti en 3 colonnes*/
+    column-rule: 1px solid rgb(75, 70, 74);/*les lignes de séparation des colonnes*/
+    left:20%;
+    top:330%;
+}
+#projet>p{
+    text-align: justify;
+}
+  
+#cinema>p {
+    text-align: center;
+    position: relative;
+    top: 10vh;
+    color: rgb(255, 255, 255);
+}
+  
+#cinema>button {
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 10vh;
+    background: white;
+    padding: 2vmin 4vmin;
+    font-size: large;
+    font-family: 'Caviar Dreams Bold';
+    border: none;
+    transition: 0.5s;
+}
+#cinema>button:hover{
+    background: rgb(255, 195, 83);
+    padding: 2.5vmin 5vmin;
+}
